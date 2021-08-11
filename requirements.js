@@ -71,7 +71,7 @@
 
 
 //PUT
-//Update the publication name
+//Update the publication name✅
 //Update/add books to publications
 
 //DELETE

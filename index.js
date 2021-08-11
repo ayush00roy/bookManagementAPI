@@ -244,11 +244,36 @@ booky.put("/publication/update/:isbn",(req,res)=>{
     dataBase.publication.forEach((pub)=>{
             if(pub.books==req.params.isbn){
             pub.name = req.body.newPublication;
-            return;
+            
         }
     });
     return res.json({Publication: dataBase.publication});
 });
 
+/*Route               /publication/update/book
+Description         update/ add new book to a publication
+Acess               PUBLIC
+Parameter            isbn
+Methods             PUT
+*/
+booky.put("/publication/update/book/:isbn",(req,res)=>{
+    //update the publication database
+    dataBase.publication.forEach((publi)=>{
+        if(publi.id===req.body.pubId){
+            return publi.books.push(req.params.isbn)
+        }
+    });
+
+    //update the book database 
+    dataBase.books.forEach((book)=>{
+        if(book.ISBN === req.params.isbn){
+            book.publication = req.body.pubId;
+            return;
+        }
+    });
+    return res.json({Books : dataBase.books , publications : dataBase.publication});
+});
+
 
 booky.listen(3000,()=>console.log("Server is running🌻"));
+
