@@ -32,8 +32,8 @@
 
 
 //DELETE
-//delete a book
-//delete an author
+//delete a book✅
+//delete an author✅
 
 
 
@@ -54,7 +54,7 @@
 
 
 //DELETE
-//DELETE an author
+//DELETE an author✅
 
 
 //Publication
@@ -72,12 +72,12 @@
 
 //PUT
 //Update the publication name✅
-//Update/add books to publications
+//Update/add books to publications✅
 
 //DELETE
-//Delete the publication
-//delete a book from publication
+//Delete the publication✅
+//delete a book from publication✅
 
 
-
+//How does the server serves the request?
 
