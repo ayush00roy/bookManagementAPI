@@ -1,14 +1,22 @@
 require("dotenv").config();
 const { json } = require("express");
 const express =require("express");
-
 const mongoose = require("mongoose");
+
+
 //Database
-const dataBase = require("./database");
+const dataBase = require("./database/database");
+
+//Models
+const BookModels = require("./database/book");
+const AuthorModels = require("./database/author");
+const PublicationModels = require("./database/publication");
+
 //Initialising
 const booky = express();
 
 booky.use(express.json());
+
 //establish database connection
 mongoose.connect(process.env.MONGO_URL,{
      useNewUrlParser: true,
